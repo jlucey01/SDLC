@@ -12,13 +12,13 @@ public class sdlc {
       
       //Reading the page
       
-      Scanner sc = new Scanner(url.openStream());
+      Scanner scnr = new Scanner(url.openStream());
       
       //Start StringBuffer to hold the file
       
       StringBuffer sb = new StringBuffer();
-      while(sc.hasNext()) {
-         sb.append(sc.next());
+      while(scnr.hasNext()) {
+         sb.append(scnr.next());
          
       }
       //Grabbing the String

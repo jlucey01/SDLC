@@ -19,8 +19,8 @@ public class sdlc {
       StringBuffer sb = new StringBuffer();
       while(scnr.hasNext()) {
          sb.append(scnr.next());
-         
       }
+      
       //Grabbing the String
       
       String result = sb.toString();

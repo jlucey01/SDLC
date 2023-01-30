@@ -29,6 +29,6 @@ public class sdlc {
       //Removing the HTML tags
       
       System.out.println("Contents of the web page: "+result);
-      System.out.println("Finally Finished Reading!");
+      System.out.println("Finally Finished Reading File!");
    }
 }

@@ -21,6 +21,6 @@ public class sdlc {
       //Removing the HTML tags
       result = result.replaceAll("<[^>]*>", "");
       System.out.println("Contents of the web page: "+result);
-      System.out.println("Done!");
+      System.out.println("Finally Finished Reading!");
    }
 }

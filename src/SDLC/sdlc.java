@@ -4,9 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Scanner;
 import java.util.Map;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 
 public class sdlc {
@@ -17,7 +15,7 @@ public class sdlc {
 	   
       URL url = new URL("https://www.gutenberg.org/files/1065/1065-h/1065-h.htm");
       
-      //Reading the page
+      //Reading the page and counting words
       
       Scanner scnr = new Scanner(url.openStream());
       while(scnr.hasNext()){
@@ -28,14 +26,15 @@ public class sdlc {
     	  else
     	  count=1;
     	  words.put(word,count);
-    	  }
+    	}
     	  scnr.close();
-    	  }
+    	}
 	
 
 	public static void main(String[] args)
     	  {
 		
+		// Create Pairs and Print them to the console
 		
     	  Map<String,Integer> words = new HashMap<String, Integer>();
     	  try {

@@ -1,3 +1,4 @@
+
 package SDLC;
 
 import java.io.*;
@@ -19,9 +20,32 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import static java.util.stream.Collectors.*;
 
-public class SDLC extends Application {
 
-	private static void GetWords(String URL, Map<String, Integer> words) throws IOException {
+
+/**
+ * @author <p>John Lucey</p>
+ *
+ * <H2>SDLC Application</H2> 
+ * 
+ * <p>Class to create a Graphical
+ * user window. Using scanner to import a document from a URL.
+ * </p> 
+ *
+ */
+
+public class SDLC extends Application {
+		
+
+
+	
+	/**
+	 * @param URL Static address to capture the online document
+	 * @param words Capture and count words
+	 * @throws IOException Presents an error if online URL not available
+	 */
+	
+	public static void GetWords(String URL, Map<String, Integer> words) throws IOException { 
+
 
 		// Grabbing the URL
 
@@ -44,13 +68,30 @@ public class SDLC extends Application {
 		scnr.close();
 	}
 
-	public static void main(String[] args) {
+/**
+ * @param args Launch
+ */
+	public static void main(String[] args) { 
+
 		launch(args);
 
+	
 	}
 
+	
+
 	@Override
-	public void start(Stage primaryStage) throws Exception {
+	
+
+/** 
+ *
+ * Start
+ *
+ * @param primaryStage  the primary stage for modal window. 
+ * @throws   Exception 
+ */
+	public void start(Stage primaryStage) throws Exception { 
+
 
 		VBox layout = new VBox();
 		Scene scene = new Scene(layout, 300, 300);
@@ -63,8 +104,18 @@ public class SDLC extends Application {
 
 		btn.setOnAction(new EventHandler<ActionEvent>() {
 
+			
+			
 			@Override
-			public void handle(ActionEvent event) {
+
+/** 
+ *
+ * Handle
+ *
+ * @param event  the event. 
+ */
+			public void handle(ActionEvent event) { 
+
 				/*
 				 * System.out.println(text.setText("/Users/johnlucey/Documents/Test/test.txt"));
 				 */
@@ -95,7 +146,15 @@ public class SDLC extends Application {
 
 	// Create pairs and send them to the console
 
-	private static void runmap() {
+	
+
+/** 
+ *
+ * Runmap
+ *
+ */
+	private static void runmap() { 
+
 		Map<String, Integer> words = new HashMap<String, Integer>();
 		try {
 			GetWords(null, words);
@@ -124,6 +183,7 @@ public class SDLC extends Application {
 		// Send text to a file
 		sorted.forEach((key, value) -> System.out.println("Word : " + key + "\t\t\t Count : " + value));
 
-	}
+	
 
+}
 }

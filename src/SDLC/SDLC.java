@@ -1,25 +1,30 @@
 
 package SDLC;
 
-import java.io.*;
+import static java.util.stream.Collectors.toMap;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
 import java.net.URL;
-import java.util.Scanner;
-
-import javafx.application.Application;
-import javafx.stage.Stage;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.control.TextArea;
-import javafx.scene.layout.VBox;
-
-import java.util.Map;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import static java.util.stream.Collectors.*;
+import java.util.Map;
+import java.util.Scanner;
 
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 
 /**
@@ -70,15 +75,42 @@ public class SDLC extends Application {
 
 /**
  * @param args Launch
+ * @throws Exception 
  */
-	public static void main(String[] args) { 
+	public static void main(String[] args) throws Exception { 
 
+		getConnection();
 		launch(args);
-
+		
+		
+		
 	
 	}
 
+	public static Connection getConnection() throws Exception{
+		
+	try {
+		
+		String driver = "com.mysql.cj.jdbc.Driver";
+		String url = "jdbc:sqlserver://localhost:1433;DatabaseName=words";
+				
+		String username = "sa";
+		String password = "StrongPwd123";
+		Class.forName(driver);
+		
+		System.out.println("Connecting...");
+		
+		Connection conn = DriverManager.getConnection(url,username,password);
+		System.out.println("Copnnected");
+		return conn;
+	} catch(Exception e){System.out.println(e);
 	
+	}
+		
+		return null;
+		
+	}
+
 
 	@Override
 	
@@ -186,4 +218,5 @@ public class SDLC extends Application {
 	
 
 }
+
 }
